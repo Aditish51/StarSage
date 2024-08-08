@@ -1,0 +1,14 @@
+.matched {
+    background-color: green;
+    color: white;
+}
+.not-matched {
+    background-color: red;
+    color: white;
+}
+#ans{
+    display: none;
+}
+body{
+    background-color: aquamarine;
+}

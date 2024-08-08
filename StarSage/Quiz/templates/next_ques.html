@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body style="background-color: black;">
+  <div class="container" style="justify-content: center; align-content: center; margin: 10% 15%;">
+    {%if sel_ques == mcq_ques %}
+      <div style="font-size: 50px; color: #ffffff; background-color: blueviolet; width: max-content; height: 100px; padding: 20px 20px 20px 20px; border-radius: 100px;"> {{sel_ques.ques_description}}</div>
+      <button style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">{{sel_ques.Option1}}</button>
+      <button  style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">{{sel_ques.Option2}}</button>
+      <button style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">{{sel_ques.Option3}}</button>
+      <button style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">{{sel_ques.Option4}}</button>
+    {%elif sel_ques == tf_ques %} 
+       <div style="font-size: 50px; color: #ffffff; background-color: blueviolet; width: max-content; height: 100px; padding: 20px 20px 20px 20px; border-radius: 100px;"> {{sel_ques.ques_description}}</div>
+       <button style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">True</button> 
+       <button style="background-color: blueviolet; margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: white;">False</button>
+    {%else%}   
+       <label for="name" style="font-size: 50px; color: #ffffff; background-color: blueviolet; width: max-content; height: 100px; padding: 20px 20px 20px 20px; border-radius: 100px;">{{sel_ques.ques_description}}</label>
+       <input type="text" id="name" name="name" style="background-color: rgb(255, 255, 255); margin: 10%; font-size: 30px; width: 200px; border-radius: 50px; color: rgb(0, 0, 0);">
+    {%endif%}    
+    <a href="http://127.0.0.1:8000/quiz/nq/"><button style="background-color: rgb(145, 255, 102); margin: 1%; font-size: 30px; width: 200px; border-radius: 50px; color: white;"> Next</button></a> 
+    </div>
+</body>
+</html>
